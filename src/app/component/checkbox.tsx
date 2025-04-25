@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React from "react";
 import { CheckboxProps } from "../utils/types";
 
 
