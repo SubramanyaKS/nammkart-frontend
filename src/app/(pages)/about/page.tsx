@@ -8,8 +8,8 @@ const AboutUs = () => {
     <div className="p-6 lg:p-16">
       {/* Header Section */}
       <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800">{title}</h1>
-        <p className="mt-4 text-gray-600 text-lg">{description}</p>
+        <h1 className="text-4xl font-bold text-gray-200">{title}</h1>
+        <p className="mt-4 text-gray-400 text-lg">{description}</p>
       </section>
 
       {/* Mission and Vision Section */}
@@ -26,12 +26,12 @@ const AboutUs = () => {
 
       {/* Statistics Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Our Achievements</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-200 mb-8">Our Achievements</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-3xl font-bold text-indigo-600">{stat.value}</p>
-              <p className="text-gray-600">{stat.label}</p>
+              <p className="text-gray-400">{stat.label}</p>
             </div>
           ))}
         </div>

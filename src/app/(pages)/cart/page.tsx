@@ -16,7 +16,7 @@ const Cart: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="bg-white h-screen text-black p-4">
       <h2 className="text-2xl font-bold text-center">Your Cart</h2>
       {state.items.length === 0 ? (
         <NoCart/>

@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { register } from "../utils/api";
 
 export const useSignup = () => {
-  const [data, setData] = useState({ username: "", email: "", password: "" ,phoneno:""});
+  const [data, setData] = useState({ username: "", email: "", password: "" ,phoneNumber:""});
   const [error, setError] = useState('');
   const router = useRouter();
 
@@ -16,7 +16,7 @@ export const useSignup = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle login logic here
-    if (!data.username || !data.email || !data.password|| !data.phoneno) {
+    if (!data.username || !data.email || !data.password|| !data.phoneNumber) {
       setError('All Fields are required');
     }
 
@@ -24,11 +24,11 @@ export const useSignup = () => {
       try {
 
         const response=await register(data);
-        console.log(response);
-          if (response.ok) {
+        console.log(response.ok);
+          if (response) {
             // alert('Registration successful');
             router.push('/login');
-            setData({ username: "", email: "", password: "",phoneno:"" })
+            setData({ username: "", email: "", password: "",phoneNumber:"" })
 
           } else {
             setError('Registration failed');

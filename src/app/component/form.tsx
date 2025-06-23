@@ -14,7 +14,7 @@ export const Form = ({handleSubmit,handleChange,formData,title,buttonTitle}:Form
       
       <div className="flex flex-wrap -mx-3 mb-6">
                   <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                      <FormInput OnChange={handleChange} value={formData.name} name="name" title='Product Name' id='grid-product-name' placeholder='ABC' type='text' /></div>
+                      <FormInput OnChange={handleChange} value={formData.productName} name="productName" title='Product Name' id='grid-product-name' placeholder='ABC' type='text' /></div>
                   <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'> <FormInput OnChange={handleChange} name='brand' value={formData.brand} title='Brand' id='grid-brand' placeholder='XYZ' type='text' /></div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -35,7 +35,7 @@ export const Form = ({handleSubmit,handleChange,formData,title,buttonTitle}:Form
         </div>
         <div className="flex flex-wrap -mx-3 mb-2">
                   <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <FormInput OnChange={handleChange} title='Discount' value={formData.discount.toString()} name='discount' id='grid-discount' placeholder='1000' type='number' />
+                      <FormInput hidden={!formData.isDiscount}  OnChange={handleChange} title='Discount Price' value={formData.discountPrice.toString()} name='discountPrice' id='grid-discount' placeholder='1000' type='number' />
                   </div>
                   <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <FormInput OnChange={handleChange} value={formData.quantity.toString()} name='quantity' title='Quantity' id='grid-quantity' placeholder='10' type='number' />
@@ -45,18 +45,32 @@ export const Form = ({handleSubmit,handleChange,formData,title,buttonTitle}:Form
                   </div>
         </div>
 
-        {/* Available */}
-        <div className="flex items-center">
-          <input
+        <div className="flex flex-wrap -mx-3 mb-2">
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <input
             type="checkbox"
-            name="available"
-            checked={formData.available}
+            name="isAvailable"
+            checked={formData.isAvailable}
             onChange={handleChange}
             className="h-4 w-4 text-blue-600 focus:ring focus:ring-blue-300"
           />
           <label className="ml-2 text-sm font-medium text-gray-700">Available</label>
+          </div>
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <input
+            type="checkbox"
+            name="isDiscount"
+            checked={formData.isDiscount}
+            onChange={handleChange}
+            className="h-4 w-4 text-blue-600 focus:ring focus:ring-blue-300"
+          />
+          <label className="ml-2 text-sm font-medium text-gray-700">Discount</label>
+          </div>
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <FormInput OnChange={handleChange} value={formData.seller} name="seller" title='Seller' id='grid-rating' placeholder='DEF' type='text' />
+                  </div>
         </div>
-
+       
         {/* Submit Button */}
         <button
           type="submit"

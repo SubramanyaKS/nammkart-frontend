@@ -8,7 +8,7 @@ import SearchBar from '../../component/searchbar';
 import { useProductSearch } from '@/app/hooks/useProductSearch';
 import CategorySidebar from '@/app/component/categorysidebar';
 
-const page = () => {
+const Page = () => {
   const { searchState } = useProductSearch();
   const { state } = useProductContext();
   const { products } = state;
@@ -22,7 +22,7 @@ const page = () => {
 
 
   return (
-    <div className="flex">
+    <div className="flex bg-gray-200 text-black">
     {/* Aside Navbar */}
    <CategorySidebar/>
   
@@ -72,4 +72,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;
