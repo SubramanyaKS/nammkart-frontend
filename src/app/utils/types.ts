@@ -3,8 +3,8 @@ import { ChangeEventHandler } from "react";
 
 export type Product = {
     id?:string;
-    productId?:string;
-    name: string;
+    productID?:string;
+    productName: string;
     price: number;
     description: string;
     category: string;
@@ -12,9 +12,10 @@ export type Product = {
     imageUrl: string;
     rating: number;
     quantity:number;
-    discount:number;
-    available:boolean;
-
+    isAvailable:boolean;
+    isDiscount:boolean;
+    discountPrice:number;
+    seller:string;
   };
   export type State = {
     products: Product[];
@@ -28,7 +29,7 @@ export type Product = {
 
   }
   export type UserLogin ={
-    username:string;
+    email:string;
     password:string;
   }
   export type User={
@@ -38,9 +39,19 @@ export type Product = {
     email:string;
 
   }
+  export interface AuthState {
+    user: User | null;
+    token: string | null;
+    isAuthenticated: boolean;
+  }
   export type ProductSearchContextType = {
     searchState: SearchState;
     searchDispatch: React.Dispatch<Action>;
+  };
+
+  export type AuthContextType = {
+    authState: AuthState;
+    dispatch: React.Dispatch<AuthActions>;
   };
 
   export type ProductContextType = {
@@ -75,6 +86,11 @@ export type CartAction =
   | { type: 'INCREASE_QUANTITY'; payload:string}
   | { type: 'DECREASE_QUANTITY'; payload:string};
 
+export type AuthActions = 
+| {type:'LOGIN';payload:string}
+| {type:'LOGOUT';};
+
+
 
   export type InputProps = {
     title: string,
@@ -98,6 +114,7 @@ export type FormInputProp= {
   OnChange: ChangeEventHandler,
   value:string;
   name:string;
+  hidden?:boolean;
 
 }
 export type CheckboxProps ={

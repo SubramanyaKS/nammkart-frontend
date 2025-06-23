@@ -14,4 +14,4 @@ export const UPDATE_QUANTITY='UPDATE_QUANTITY';
 export const CLEAR_CART='CLEAR_CART';
 export const UPDATE_SEARCH_CATEGORY='UPDATE_SEARCH_CATEGORY';
 
-export const backendurl='http://localhost:8080';
+export const backendurl='http://localhost:4000';

@@ -5,6 +5,7 @@ import Navbar from "./component/navbar";
 import { ProductProvider } from "./context/productContext";
 import { ProductSearchProvider } from "./context/productSearchContext";
 import { CartProvider } from "./context/cartContext";
+import { AuthProvider } from "./context/authContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,10 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthProvider>
         <ProductSearchProvider>
           
         <ProductProvider>
@@ -42,6 +44,7 @@ export default function RootLayout({
         </ProductProvider> 
         
         </ProductSearchProvider>
+        </AuthProvider>
       </body>
     </html>
   );
