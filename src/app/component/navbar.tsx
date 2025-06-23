@@ -3,18 +3,31 @@ import { useState } from "react";
 import Link from "next/link";
 import CartIcon from "./cartIcon";
 import { useCart } from "../context/cartContext";
+import { useAuth } from "../context/authContext";
+import { useRouter } from "next/navigation";
+import { logout } from "../utils/api";
+
 
 const Navbar: React.FC = () => {
+  const {authState,dispatch}=useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const {state}= useCart();
-  const itemc=state.items?.length;
-
+  const router = useRouter();
+  const itemc=state.items?.length||0;
+  
+  const handleLogout = async() => {
+    dispatch({ type: "LOGOUT" });
+    await logout();
+    localStorage.removeItem("user");
+    router.push("/login");
+  };
+  
   return (
     <nav className="bg-white border-gray-200 px-4 sm:px-6 py-2.5 shadow-md">
       
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap">Nammkart</span>
+          <span className="self-center text-xl text-blue-500 font-semibold whitespace-nowrap">Nammkart</span>
         </Link>
         
         <button
@@ -73,18 +86,27 @@ const Navbar: React.FC = () => {
                 Contact
               </Link>
             </li>
-            <li>
+            {!authState.isAuthenticated ?<li>
               <Link
                 href="/login"
                 className="block py-2 pl-4 pr-4 text-blue rounded-full lg:bg-blue-500 lg:text-white  lg:hover:text-white"
               >
                 Login
               </Link>
-            </li>
+            </li>:
+             <li>
+             <Link
+             onClick={()=>handleLogout()}
+               href=""
+               className="block py-2 pl-4 pr-4 text-blue rounded-full lg:bg-blue-500 lg:text-white  lg:hover:text-white"
+             >
+               Logout
+             </Link>
+           </li>}
             <li>
               <Link
                 href="/cart">
-              <CartIcon itemcount={itemc?itemc:0}/>
+              <CartIcon itemcount={itemc}/>
               </Link>
             </li>
           </ul>
