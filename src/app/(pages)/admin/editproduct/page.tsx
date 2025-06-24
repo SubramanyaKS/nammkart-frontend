@@ -6,22 +6,30 @@ import { updateProduct } from '@/app/utils/api';
 
 const EditProduct = () => {
   const initialProduct = {
-    id: '1',
-    name: 'Sample Product',
+    productID: 'XYFDSTUUI',
+    ProductName: 'Sample Product',
     description: 'This is a sample product',
     price: 100,
-    stock: 10,
+    quantity: 10,
+    discountPrice:90,
+    rating:4.0,
+    category:'Electronics',
+    seller:'ADC',
+    brand:'XCD',
+    imageUrl:''
+
   };
 
   const fields = [
-    { name: 'name', label: 'Product Name', type: 'text' },
+    { name: 'productName', label: 'Product Name', type: 'text' },
     { name: 'description', label: 'Description', type: 'text' },
     { name: 'category', label: 'Category', type: 'text' },
     { name: 'brand', label: 'brand', type: 'text' },
-    { name: 'discount', label: 'Discount', type: 'number' },
+    { name: 'discountPrice', label: 'Discount Price', type: 'number' },
     { name: 'quantity', label: 'Quantity', type: 'number' },
     { name: 'price', label: 'Price', type: 'number' },
     { name: 'imageUrl', label: 'Image Url', type: 'text' },
+    { name: 'seller', label: 'Seller', type: 'text' },
     { name: 'rating', label: 'Rating', type: 'number' },
   ];
 

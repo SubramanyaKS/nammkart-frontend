@@ -35,7 +35,7 @@ export type Product = {
   export type User={
     username:string;
     password:string;
-    phoneno:string;
+    phoneNumber:string;
     email:string;
 
   }
@@ -143,7 +143,21 @@ export type FormProps ={
   buttonTitle?:string;
 }
 
+export type ProductCardProps = {
+  product: Product;
+}
+
+export type CartIconProps ={
+  itemcount:number | string;
+}
+
 export interface StarRatingProps{
   rating:number,
   numReview:number,
+}
+export type ImageMagnifierProps = {
+  src: string;
+  width: number;
+  height: number;
+  zoom?: number;
 }

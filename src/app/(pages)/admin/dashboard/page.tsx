@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 text-black">
       {/* Sidebar */}
       <div className="flex">
         <aside className="w-64 bg-white shadow-md h-screen">

@@ -2,7 +2,7 @@ import React from "react";
 import { aboutData } from "../../data/data";
 
 const AboutUs = () => {
-  const { title, description, mission, vision, stats, team } = aboutData;
+  const { title, description, mission, vision, stats } = aboutData;
 
   return (
     <div className="p-6 lg:p-16">

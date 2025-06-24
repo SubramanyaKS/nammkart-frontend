@@ -26,6 +26,9 @@ const ProductTable = ({products}) => {
                     Price
                 </th>
                 <th scope="col" className="px-6 py-3">
+                    Discounted Price
+                </th>
+                <th scope="col" className="px-6 py-3">
                     Action
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -37,7 +40,7 @@ const ProductTable = ({products}) => {
             {products.map((product:Product,i:number)=>(
                 <tr key={i} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-300">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {product.name}
+                    {product.productName}
                 </th>
                 <td className="px-6 py-4">
                     <Image src={product.imageUrl} width={25} height={25} alt={product.name}/>
@@ -49,10 +52,13 @@ const ProductTable = ({products}) => {
                     {product.price}
                 </td>
                 <td className="px-6 py-4">
-                    <a href="#" onClick={()=>{router.push(`/admin/editproduct/${product.productId}`)}} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    {product.discountPrice}
                 </td>
                 <td className="px-6 py-4">
-                    <a href="#" onClick={()=>deleteProduct(product.productId)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                    <a href="#" onClick={()=>{router.push(`/admin/editproduct/${product.productID}`)}} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+                <td className="px-6 py-4">
+                    <a href="#" onClick={()=>deleteProduct(product.productID)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>
             </tr>
 

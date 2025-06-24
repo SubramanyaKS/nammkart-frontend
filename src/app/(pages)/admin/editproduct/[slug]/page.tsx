@@ -3,7 +3,7 @@ import UpdateForm from '@/app/component/updateform';
 import useProducts from '@/app/hooks/useProducts';
 import React from 'react'
 
-const page = ({params}:{params:{slug:string}}) => {
+const Page = ({params}:{params:{slug:string}}) => {
     const {product} = useProducts({params});
   
     if (!product) {
@@ -13,4 +13,4 @@ const page = ({params}:{params:{slug:string}}) => {
     
 }
 
-export default page
+export default Page

@@ -1,8 +1,7 @@
 import { useRouter } from 'next/navigation';
-import React, { useContext, useState} from 'react';
+import React, { useState} from 'react';
 import { UserLogin } from '../utils/types';
 import { login } from '../utils/api';
-import Cookies from "js-cookie";
 import { useAuth } from '../context/authContext';
 // import {useSession,signIn} from 'next-auth/react';
 // import { isValidEmail, isValidPassword } from '../utils/validate';
