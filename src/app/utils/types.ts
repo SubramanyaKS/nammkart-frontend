@@ -17,6 +17,12 @@ export type Product = {
     discountPrice:number;
     seller:string;
   };
+  export type Category={
+    id?:string;
+    name: string;
+    description: string;
+    imageUrl: string;
+  }
   export type State = {
     products: Product[];
     error: string | null;

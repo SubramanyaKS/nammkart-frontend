@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NamKart - Your Ultimate Shopping Destination
 
-## Getting Started
+Welcome to NamKart, a modern and responsive shopping app built with React.js, Tailwind css for styling.
 
-First, run the development server:
+## Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Search Products:**
+  - Easily find your desired products using the search functionality. Discover a wide range of items at your fingertips.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Responsive UI:**
+  - NamKart provides a seamless shopping experience across various devices and screen sizes. Enjoy a consistent and visually appealing interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Product Categories:**
+  - Explore a diverse selection of products categorized for efficient navigation. From electronics to fashion, NamKart has it all.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **User-Friendly Design:**
+  - Experience an intuitive and user-friendly design that ensures smooth navigation and a pleasant shopping journey.
 
-## Learn More
+- **Product Details:**
+  - View detailed information about each product, including images, descriptions, and prices, to make informed purchase decisions.
 
-To learn more about Next.js, take a look at the following resources:
+<!-- ## Visit NamKart:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NamKart is live and ready for you to explore! Visit [NamKart E-Commerce](https://namkart-ecommerce.netlify.app/) and start shopping today. -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Run Locally:
 
-## Deploy on Vercel
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/SubramanyaKS/nammkart-frontend.git
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Navigate to the project directory:
+    ```bash
+    cd nammkart-frontend
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+5. Open your browser and visit `http://localhost:5173` to explore NamKart locally.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing:
+
+We welcome contributions! If you'd like to contribute to NamKart, please follow our [Contribution Guidelines](https://github.com/SubramanyaKS/nammkart-frontend/blob/main/CONTRIBUTING.md).
+
+## Feedback:
+
+We value your feedback. If you have any suggestions, issues, or feature requests, please open an [issue](https://github.com/SubramanyaKS/nammkart-frontend/issues).
+
+Happy Shopping with NamKart!
