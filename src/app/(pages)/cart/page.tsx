@@ -1,5 +1,4 @@
 'use client'
-import Button from '@/app/component/button';
 import QuantityButton from '@/app/component/quantityButton';
 import { useCart } from '@/app/context/cartContext';
 import React from 'react';
