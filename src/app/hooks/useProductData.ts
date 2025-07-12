@@ -5,22 +5,24 @@ import { useRouter } from "next/navigation";
 
 const useProductData = ()=>{
     const [formData, setFormData] = useState({
-        name: "",
+        productName: "",
         description: "",
         price: 0,
-        discount:0,
+        discountPrice:0,
         imageUrl:'',
-        available:false,
+        isAvailable:false,
         quantity:0,
         rating:0.0,
         brand:'',
         category:'',
+        isDiscount:false,
+        seller:'',
 
       });
       const router = useRouter();
 
       const handlecheckChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, available: event.target.checked });
+        setFormData({ ...formData, isAvailable: event.target.checked });
       };
     
       const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,9 +34,9 @@ const useProductData = ()=>{
       };
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form",formData.available)
+        console.log("Form",formData.isAvailable)
         try {
-          const response = await axios.post(`${backendurl}/api/products/`, formData);
+          const response = await axios.post(`http://localhost:4000/api/products/add`, formData);
           alert("Product added successfully!");
           console.log(response.data);
           router.back();

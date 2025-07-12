@@ -12,10 +12,6 @@ export const useLogin=()=>{
   const [error,setError] = useState('');
   const router = useRouter();
 
-//   useEffect(() => {
-//     if(session?.status==='authenticated'){
-//       router.replace('/generation');
-//     }},[router,session])
 
     const handleChange =  async (event:any) => {
       const { name,value} = event.target;
@@ -33,6 +29,7 @@ export const useLogin=()=>{
     try {
       
       const access_token = await login(data);
+      console.log(access_token);
       dispatch({ type: "LOGIN", payload: access_token });
       localStorage.setItem("user", JSON.stringify(access_token));
       // Cookies.set("access_token", access_token, { secure: true, sameSite: "Strict" });
