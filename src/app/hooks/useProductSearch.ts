@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { ProductSearchContext } from "../context/productSearchContext";
-import { Product } from "../utils/types";
 import { searchProduct, searchProductByCategory } from "../utils/api";
 export const useProductSearch = () => {
   const { searchState, searchDispatch } = useContext<any>(ProductSearchContext);

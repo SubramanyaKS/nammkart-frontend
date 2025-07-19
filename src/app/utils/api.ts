@@ -60,20 +60,48 @@ export const logout = async () => {
   }
 }
 
-export const login = async (user: UserLogin) => {
+export const getUserProfile = async () => {
   try {
-    console.log(user);
+    axios.defaults.withCredentials = true; // Ensure credentials are sent with requests
+    const response = await axios.get(`${backendurl}/api/users/auth/user/email`, {
+      headers: {
+        'withCredentials': 'true',
+        'Content-Type': 'application/json',
+      }
+    });
+    console.log('Profile data:', response.data);
+    return response.data;
+  } catch (error: unknown) {  
+    if (error instanceof AxiosError) {
+      console.error(error.response?.data);
+    } else if (error instanceof Error) {
+      throw new Error(error.message);
+    }
+  }
+}
+
+
+export const login = async (user: UserLogin) => {
+   console.log("User inside login function",user);
+  try {
+   
     const response = await axios.post(`${backendurl}/api/users/auth/login`, user, {
       withCredentials: true
     });
     const data = await response.data;
+    console.log(data)
     return data;
 
-  } catch (error: unknown) {
+  } catch (error:unknown) {
     if (error instanceof AxiosError) {
-      console.error(error.response?.data);
+      console.error("Axios error",error.response?.data?.message);
+      throw new Error(error.response?.data?.message || "An error occurred during login");
     } else if (error instanceof Error) {
-      console.error(error.message);
+      console.error("instance",error.message);
+      throw new Error(error.message);
+    }
+    else{
+      console.error("An unknown error occurred",error);
     }
   }
 }
@@ -129,5 +157,6 @@ export const getStoredCart = () => {
     storedCart = localStorage.getItem("cart");
     // Use storedCart if needed
   }
+  console.log("Stored Cart:", storedCart);
   return storedCart ? JSON.parse(storedCart) : [];
 };

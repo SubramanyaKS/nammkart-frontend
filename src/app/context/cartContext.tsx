@@ -4,7 +4,6 @@ import React, { createContext, useReducer, useContext, ReactNode, useEffect } fr
 
 import { cartReducer } from '../reducer/cart';
 import { CartAction, CartState } from '../utils/types';
-import { getStoredCart } from '../utils/api';
 
 const initialState: CartState = { items: [] };
 
@@ -14,7 +13,7 @@ const CartContext = createContext<{
 } | null>(null);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, getStoredCart());
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state));

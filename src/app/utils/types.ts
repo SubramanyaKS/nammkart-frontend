@@ -59,6 +59,10 @@ export type Product = {
     authState: AuthState;
     dispatch: React.Dispatch<AuthActions>;
   };
+  export type ProfileContextType = {
+    profileState: ProfileState;
+    profileDispatch: React.Dispatch<ProfileAction>;
+  };
 
   export type ProductContextType = {
     state: State;
@@ -97,8 +101,40 @@ export type AuthActions =
 | {type:'LOGOUT';};
 
 
+export type ProfileState = {
+  profile: Profile | null;
+  address?:Address | null;
+  loading: boolean;
+  error: string | null;
+};
 
-  export type InputProps = {
+export type Profile = {
+    username: string;
+    email: string; 
+    phoneNumber: string;
+    userId:string;
+    profileUrl: string;
+    role: string;
+}
+
+export type Address = {
+  userId:string;
+  street:string;
+  city:string;
+  state:string;
+  postalCode:string;
+  country:string;
+}
+
+
+export type ProfileAction =
+| { type: 'UPDATE_PROFILE'; payload: Profile }
+| { type: 'FETCH_PROFILE'; payload: Profile }
+| { type: 'CLEAR_PROFILE' }
+| { type:'FETCH_ADDRESS';payload:Address}
+| { type: 'FETCH_PROFILE_ERROR', payload: string };
+
+export type InputProps = {
     title: string,
     OnChange: ChangeEventHandler,
     id: string,

@@ -2,7 +2,10 @@ import { ADD_ITEM, CLEAR_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, REMOVE_ITEM
 import { CartAction, CartState } from "../utils/types";
 
 
-export const cartReducer = (state: CartState, action: CartAction): CartState => {
+
+const initialState: CartState = { items: [] };
+
+export const cartReducer = (state: CartState=initialState, action: CartAction): CartState => {
     switch (action.type) {
         case INCREASE_QUANTITY:
             // Increase the quantity of a specific item

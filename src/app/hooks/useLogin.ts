@@ -22,22 +22,27 @@ export const useLogin=()=>{
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle login logic here
+    setError('');
     if(!data.email || !data.password){
       setError("All Fields are required");
     }
 
+
     try {
       
       const access_token = await login(data);
-      console.log(access_token);
+      console.log("Access Token",access_token);
+      if(access_token!== undefined && access_token !== null){
       dispatch({ type: "LOGIN", payload: access_token });
       localStorage.setItem("user", JSON.stringify(access_token));
       // Cookies.set("access_token", access_token, { secure: true, sameSite: "Strict" });
       // console.log(access_token);
       router.push('/products');
+      }
       
     } catch (error:any) {
       alert("Called Error"+error.message);
+      setError(error.message);
       // console.error("Error",error.message)
       
     }
