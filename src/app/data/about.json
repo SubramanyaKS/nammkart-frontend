@@ -1,0 +1,38 @@
+{
+    "companyName": "Nammkart",
+    "tagline": "Your Trusted eCommerce Partner",
+    "description": "Nammkart is an innovative eCommerce platform designed to connect people with the products they love. We aim to provide seamless shopping experiences with a wide variety of products, competitive prices, and outstanding customer service.",
+    "mission": "To empower communities by providing access to quality products at affordable prices and fostering innovation in eCommerce.",
+    "vision": "To be the leading eCommerce platform that delivers happiness and convenience to millions of users worldwide.",
+    "values": ["Customer Focus", "Innovation", "Integrity", "Quality", "Community"],
+    "team": [
+      {
+        "name": "Amit Sharma",
+        "role": "Founder & CEO",
+        "photo": "https://via.placeholder.com/150",
+        "bio": "Amit leads Nammkart with a vision to transform online shopping into a seamless experience."
+      },
+      {
+        "name": "Priya Menon",
+        "role": "Head of Operations",
+        "photo": "https://via.placeholder.com/150",
+        "bio": "Priya ensures that every order is fulfilled with excellence and speed."
+      },
+      {
+        "name": "Rahul Verma",
+        "role": "CTO",
+        "photo": "https://via.placeholder.com/150",
+        "bio": "Rahul drives the technology innovations at Nammkart."
+      }
+    ],
+    "statistics": {
+      "customersServed": "1M+",
+      "productsAvailable": "50K+",
+      "countriesOperatedIn": "20+"
+    },
+    "cta": {
+      "buttonText": "Start Shopping",
+      "link": "/shop"
+    }
+  }
+  
