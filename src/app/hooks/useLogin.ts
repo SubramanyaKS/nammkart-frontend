@@ -40,10 +40,14 @@ export const useLogin=()=>{
       router.push('/products');
       }
       
-    } catch (error:any) {
-      alert("Called Error"+error.message);
-      setError(error.message);
-      // console.error("Error",error.message)
+    } catch (error: unknown) {
+      let errorMessage = "An error occurred";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      alert("Called Error" + errorMessage);
+      setError(errorMessage);
+      // console.error("Error", errorMessage)
       
     }
 
