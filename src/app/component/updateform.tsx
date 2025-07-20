@@ -24,7 +24,6 @@ const UpdateForm = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Updated Product:', formData);
     try {
       updateProduct(formData);
       router.push('/admin/products/')

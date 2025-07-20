@@ -34,11 +34,9 @@ const useProductData = ()=>{
       };
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form",formData.isAvailable)
         try {
-          const response = await axios.post(`http://localhost:4000/api/products/add`, formData);
+          const response = await axios.post(`${backendurl}/api/products/add`, formData);
           alert("Product added successfully!");
-          console.log(response.data);
           router.back();
         } catch (error: any) {
           alert("Failed to add product.");

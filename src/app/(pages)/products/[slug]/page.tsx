@@ -18,7 +18,7 @@ const Page = ({params}:{params:{slug:string}}) => {
       return <div>Loading product details...</div>;
     }
     
-    const handleAddToCart = (productId,name,price) => {
+    const handleAddToCart = (productId: string, name: string, price: number) => {
       dispatch({
         type: 'ADD_ITEM',
         payload: { productId, name, price, quantity: 1 },
@@ -61,7 +61,7 @@ const Page = ({params}:{params:{slug:string}}) => {
         />
         {product.isAvailable?<IconButton src={cartIcon}
           classN="bg-blue-600 mt-1 mr-1 text-white hover:bg-blue-700" title='Add to Cart'
-          OnClick={() => {console.log("called");handleAddToCart(product.productID,product.productName,product.isDiscount?product.discountPrice:product.price)}}
+          OnClick={() => {handleAddToCart(product.productID,product.productName,product.isDiscount?product.discountPrice:product.price)}}
         />:null}
            </div>
           </div>

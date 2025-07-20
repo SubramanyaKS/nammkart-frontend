@@ -17,7 +17,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const router = useRouter();
 
   const handleAddToCart = (productId, name, price) => {
-    console.log(name);
+    // console.log(name);
     dispatch({
       type: 'ADD_ITEM',
       payload: { productId, name, price, quantity: 1 },

@@ -13,8 +13,8 @@ export const useLogin=()=>{
   const router = useRouter();
 
 
-    const handleChange =  async (event:any) => {
-      const { name,value} = event.target;
+    const handleChange =  async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
       setData({ ...data, [name]: value });
     };
 
@@ -36,7 +36,7 @@ export const useLogin=()=>{
       dispatch({ type: "LOGIN", payload: access_token });
       localStorage.setItem("user", JSON.stringify(access_token));
       // Cookies.set("access_token", access_token, { secure: true, sameSite: "Strict" });
-      // console.log(access_token);
+      
       router.push('/products');
       }
       

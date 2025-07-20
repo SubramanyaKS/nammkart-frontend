@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
     const token = request.cookies.get('token')?.value;
-    console.log("Token in middleware:", request.cookies);
+    // console.log("Token in middleware:", request.cookies);
     const { pathname } = request.nextUrl;
     
     const publicPaths = ['/login', '/signup','/about', '/','/products']; // Add your public routes here

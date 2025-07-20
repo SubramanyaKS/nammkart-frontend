@@ -34,7 +34,7 @@ const EditProduct = () => {
   ];
 
   const handleSubmit = (data: Product) => {
-    console.log('Updated Product:', data);
+    // console.log('Updated Product:', data);
     // Send to API
     updateProduct(data);
     
