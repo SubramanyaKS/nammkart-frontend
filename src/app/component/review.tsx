@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { getReviewByProductId } from '../utils/api';
-import axios from 'axios';
-import { backendurl } from '../utils/constant';
 import apiClient from '../utils/apiclient';
 
 type ReviewProps = {
@@ -12,7 +9,7 @@ const Review = ({productId}:ReviewProps) => {
     const [data,setData]= useState([]);
 
     useEffect(() => {
-        apiClient.get(`/products/${productId}/reviews`).then((res)=>{console.log("Result",res);setData(res.data)}).catch((err)=>console.log(err));
+        apiClient.get(`/products/${productId}/reviews`).then((res)=>{setData(res.data)}).catch((err)=>console.log(err));
     }, [])
 
     if(data.length<=0){

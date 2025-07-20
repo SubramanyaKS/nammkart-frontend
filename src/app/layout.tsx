@@ -6,6 +6,7 @@ import { ProductProvider } from "./context/productContext";
 import { ProductSearchProvider } from "./context/productSearchContext";
 import { CartProvider } from "./context/cartContext";
 import { AuthProvider } from "./context/authContext";
+import { ProfileProvider } from "./context/profileContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,6 +35,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
+        <ProfileProvider>
+        
+          
         <ProductSearchProvider>
           
         <ProductProvider>
@@ -44,6 +48,9 @@ export default function RootLayout({
         </ProductProvider> 
         
         </ProductSearchProvider>
+        
+        
+        </ProfileProvider>
         </AuthProvider>
       </body>
     </html>

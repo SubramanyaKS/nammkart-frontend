@@ -69,7 +69,6 @@ export const getUserProfile = async () => {
         'Content-Type': 'application/json',
       }
     });
-    console.log('Profile data:', response.data);
     return response.data;
   } catch (error: unknown) {  
     if (error instanceof AxiosError) {

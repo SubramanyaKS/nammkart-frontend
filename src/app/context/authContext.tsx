@@ -3,7 +3,6 @@ import { createContext, ReactNode, useContext, useEffect, useReducer } from "rea
 import { AuthContextType, AuthState } from "../utils/types";
 import { authReducer } from "../reducer/auth";
 
-
 const initialState:AuthState = {
   isAuthenticated: false,
   user: null,

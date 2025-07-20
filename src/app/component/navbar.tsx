@@ -86,6 +86,15 @@ const Navbar: React.FC = () => {
                 Contact
               </Link>
             </li>
+            {authState.isAuthenticated ?<li>
+              <Link
+                href="/profile"
+                className="block py-2 pl-4 pr-4 text-blue rounded-full lg:bg-blue-500 lg:text-white  lg:hover:text-white"
+              >
+                Profile
+              </Link>
+            </li>:null
+            }
             {!authState.isAuthenticated ?<li>
               <Link
                 href="/login"
