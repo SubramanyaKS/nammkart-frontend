@@ -36,7 +36,7 @@ const useProductData = ()=>{
         e.preventDefault();
         try {
           const response = await axios.post(`${backendurl}/api/products/add`, formData);
-          alert("Product added successfully!");
+          alert(`Product added successfully! ${response}`);
           router.back();
         } catch (error: any) {
           alert("Failed to add product.");

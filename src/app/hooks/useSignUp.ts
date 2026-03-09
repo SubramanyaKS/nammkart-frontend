@@ -7,7 +7,7 @@ export const useSignup = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const handleChange = async (event: any) => {
+  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setData({ ...data, [name]: value });
   };
@@ -37,7 +37,7 @@ export const useSignup = () => {
 
 
       } catch (error) {
-        setError("Something gone wrong");
+        setError(`Something gone wrong ${error}`);
 
       }
 

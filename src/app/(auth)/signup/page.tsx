@@ -5,7 +5,7 @@ import { useSignup } from '@/app/hooks/useSignUp';
 import Link from 'next/link';
 import React from 'react';
 
-const page = () => {
+const Page = () => {
   const {data,handleChange,handleSubmit,error} = useSignup(); 
 
   return (
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
